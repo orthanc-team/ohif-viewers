@@ -132,6 +132,10 @@ export default class SyncGroupService {
     SynchronizerManager.destroy();
   }
 
+  public onModeExit(): void {
+    this.destroy();
+  }
+
   public removeViewportFromSyncGroup(
     viewportId: string,
     renderingEngineId: string,

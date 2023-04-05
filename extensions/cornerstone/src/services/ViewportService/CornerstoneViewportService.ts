@@ -128,7 +128,7 @@ class CornerstoneViewportService extends PubSubService
   /**
    * It triggers the resize on the rendering engine.
    */
-  public resize() {
+  public resize(): void {
     const immediate = true;
     const keepCamera = true;
 
@@ -139,7 +139,7 @@ class CornerstoneViewportService extends PubSubService
   /**
    * Removes the viewport from cornerstone, and destroys the rendering engine
    */
-  public destroy() {
+  public destroy(): void {
     this._removeResizeObserver();
     this.viewportGridResizeObserver = null;
     try {
@@ -150,6 +150,10 @@ class CornerstoneViewportService extends PubSubService
     this.viewportsDisplaySets.clear();
     this.renderingEngine = null;
     cache.purgeCache();
+  }
+
+  public onModeExit(): void {
+    this.destroy();
   }
 
   /**

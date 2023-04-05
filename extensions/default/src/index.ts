@@ -1,9 +1,9 @@
 import { Types } from '@ohif/core';
 
-import getDataSourcesModule from './getDataSourcesModule.js';
-import getLayoutTemplateModule from './getLayoutTemplateModule.js';
+import getDataSourcesModule from './getDataSourcesModule';
+import getLayoutTemplateModule from './getLayoutTemplateModule';
 import getPanelModule from './getPanelModule';
-import getSopClassHandlerModule from './getSopClassHandlerModule.js';
+import getSopClassHandlerModule from './getSopClassHandlerModule';
 import getToolbarModule from './getToolbarModule';
 import getCommandsModule from './commandsModule';
 import getHangingProtocolModule from './getHangingProtocolModule';

@@ -32,6 +32,8 @@ export default class ToolGroupService {
 
   serviceManager: any;
   private toolGroupIds: Set<string> = new Set();
+  private cornerstoneViewportService;
+
   /**
    * Service-specific
    */
@@ -77,12 +79,16 @@ export default class ToolGroupService {
     return toolGroup.getActivePrimaryMouseButtonTool();
   }
 
-  public destroy() {
+  public destroy(): void {
     ToolGroupManager.destroy();
     this.toolGroupIds = new Set();
   }
 
-  public destroyToolGroup(toolGroupId: string) {
+  public onModeExit(): void {
+    this.destroy();
+  }
+
+  public destroyToolGroup(toolGroupId: string): void {
     ToolGroupManager.destroyToolGroup(toolGroupId);
     this.toolGroupIds.delete(toolGroupId);
   }

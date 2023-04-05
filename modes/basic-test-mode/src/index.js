@@ -68,6 +68,7 @@ function modeFactory() {
      * Lifecycle hooks
      */
     onModeEnter: ({ servicesManager, extensionManager, commandsManager }) => {
+      console.log('****** basic test mode onModeEnter');
       const {
         measurementService,
         toolbarService,

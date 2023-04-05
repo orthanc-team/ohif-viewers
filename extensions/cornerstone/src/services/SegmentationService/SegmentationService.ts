@@ -65,7 +65,7 @@ class SegmentationService {
     this._initSegmentationService();
   }
 
-  public destroy = () => {
+  public destroy(): void {
     eventTarget.removeEventListener(
       csToolsEnums.Events.SEGMENTATION_MODIFIED,
       this._onSegmentationModified
@@ -83,7 +83,11 @@ class SegmentationService {
 
     this.segmentations = {};
     this.listeners = {};
-  };
+  }
+
+  public onModeExit(): void {
+    this.destroy();
+  }
 
   /**
    * It adds a segment to a segmentation, basically just setting the properties for
