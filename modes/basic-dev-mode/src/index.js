@@ -159,7 +159,7 @@ const modeDefinition = {
     const modalities_list = modalities.split('\\');
 
     return modalities_list.some(
-      modality => this.excludeModalities.indexOf(modality) !== -1
+      modality => this.excludeModalities.indexOf(modality) === -1
     );
   },
 

@@ -74,7 +74,7 @@ function getRuntimeLoadModesExtensions(modules) {
     );
   })
   dynamicLoad.push(
-    '  return import(module);',
+    '  return (await import(module)).default;',
     '}\n',
     '// Import a list of items (modules or string names)',
     '// @return a Promise evaluating to a list of modules',
