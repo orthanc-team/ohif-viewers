@@ -16,7 +16,14 @@ const serviceImplementation = {
   _getState: () => console.warn('getState() NOT IMPLEMENTED'),
   _setUser: () => console.warn('_setUser() NOT IMPLEMENTED'),
   _getUser: () => console.warn('_setUser() NOT IMPLEMENTED'),
-  _getAuthorizationHeader: () => {}, // TODO: have enabled/disabled state?
+  _getAuthorizationHeader: () => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.has('token')) {
+      return { 'token': params.get('token') }
+    } else {
+      return {}
+    }
+  }, // TODO: have enabled/disabled state?
   //console.warn('_getAuthorizationHeader() NOT IMPLEMENTED'),
   _handleUnauthenticated: () =>
     console.warn('_handleUnauthenticated() NOT IMPLEMENTED'),

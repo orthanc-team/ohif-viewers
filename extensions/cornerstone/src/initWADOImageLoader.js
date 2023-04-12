@@ -54,7 +54,7 @@ export default function initWADOImageLoader(
       // we should set this flag to false.
       convertFloatPixelDataToInt: false,
     },
-    beforeSend: function(xhr) {
+    beforeSend: function (xhr) {
       const headers = userAuthenticationService.getAuthorizationHeader();
 
       // Request:
